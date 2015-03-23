@@ -18,7 +18,4 @@
         <src lang="en" xlink:href="description/desc.txt"/>
         <src lang="de" xlink:href="description/desc-de.txt"/>
     </extension-description>
-    <update-information>
-        <src xlink:href="https://github.com/TUD-INF-IAI-MCI/SvgExportFilterAddOn/raw/master/dist/SvgExportFilterAddOn.oxt"/>
-    </update-information>
 </description>

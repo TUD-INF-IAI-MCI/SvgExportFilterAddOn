@@ -58,12 +58,12 @@
           <prop oor:name="ImageBigURL">
             <value>%origin%/../../images/SvgIcon26LoContrast.png</value>
           </prop>
-          <prop oor:name="ImageSmallHCURL">
+          <!--prop oor:name="ImageSmallHCURL">
             <value>%origin%/../../images/SvgIcon16HiContrast.png</value>
           </prop>
           <prop oor:name="ImageBigHCURL">
             <value>%origin%/../../images/SvgIcon26HiContrast.png</value>
-          </prop>
+          </prop-->
         </node>
       </node>
       </node>
