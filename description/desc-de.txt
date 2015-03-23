@@ -1,0 +1,1 @@
+Exportiert Draw Dokumente als SVG. Wendet alle Transformationen an. Konvertiert primitive Elemente zu Pfad-Elementen.

@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<oor:component-data xmlns:oor="http://openoffice.org/2001/registry" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    oor:package="org.openoffice.TypeDetection" oor:name="Types">
+    <node oor:name="Types">
+        <node oor:name="tud_mci_tangram_SvgExportFilter" oor:op="replace">
+                <prop oor:name="UIOrder"><value>0</value></prop>
+                <prop oor:name="DetectService"><!--value>tud.mci.tangram.SvgExportFilterAddOn</value-->
+                    <value>com.sun.star.comp.filters.XMLFilterDetect</value>
+                </prop>
+                <prop oor:name="URLPattern"/>
+                <prop oor:name="Extensions"><value>svg</value></prop>
+                <prop oor:name="MediaType"><!--value>image/svg+xml</value--></prop>
+                <prop oor:name="Preferred"><value>true</value></prop>
+                <prop oor:name="PreferredFilter"><!--value>tud_mci_tangram_SvgExportFilter</value--></prop>
+                <prop oor:name="UIName">
+                    <value xml:lang="x-default">Scalable Vector Graphics Add-On</value>
+                </prop>
+                <prop oor:name="ClipboardFormat"><!--value>image/svg+xml</value--></prop>
+        </node>
+    </node>
+</oor:component-data>

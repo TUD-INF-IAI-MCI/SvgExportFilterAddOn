@@ -1,0 +1,1 @@
+Exports Draw documents to SVG. Applies all transformations. Convert primitive shapes to paths.

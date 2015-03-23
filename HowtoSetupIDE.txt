@@ -1,0 +1,13 @@
+NetBeans IDE 8.0.2 
+	https://netbeans.org/downloads/
+
+OpenOffice 4.1.1 with SDK
+	http://www.openoffice.org/download/other.html
+
+OpenOffice Extensions Developer Netbeans Plugin: org-openoffice-extensions-4.1.0.nbm
+	http://people.apache.org/~cmarcum/devtools/	
+	(after installing in netbeans, configure paths for openoffice and openoffice sdk)
+
+Open this project (this folder)
+
+In the Projects Window right click the Project and look for entries "Debug Extension in Target Apache OpenOffice", "Create OXT" and so on.

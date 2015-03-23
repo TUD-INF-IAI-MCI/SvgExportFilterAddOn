@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest:manifest xmlns:manifest="http://openoffice.org/2001/manifest">
+  <manifest:file-entry manifest:media-type="application/vnd.sun.star.uno-component;type=Java"
+                       manifest:full-path="SvgExportFilterAddOn.jar"/>
+  <manifest:file-entry manifest:media-type="application/vnd.sun.star.uno-components"
+                       manifest:full-path="registry/data/registration.component"/>
+  <manifest:file-entry manifest:media-type="application/vnd.sun.star.configuration-data"
+                       manifest:full-path="registry/data/TypesDetection.xcu"/>
+  <manifest:file-entry manifest:media-type="application/vnd.sun.star.configuration-data"
+                       manifest:full-path="registry/data/FiltersDetection.xcu"/>
+  <manifest:file-entry manifest:media-type="application/vnd.sun.star.configuration-data"
+                       manifest:full-path="registry/data/ProtocolHandler.xcu"/>
+  <manifest:file-entry manifest:media-type="application/vnd.sun.star.configuration-data"
+                       manifest:full-path="registry/data/Addons.xcu"/>
+</manifest:manifest>

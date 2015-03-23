@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<oor:component-data xmlns:oor="http://openoffice.org/2001/registry" xmlns:xs="http://www.w3.org/2001/XMLSchema" oor:name="Addons" oor:package="org.openoffice.Office">
+  <node oor:name="AddonUI">
+    <node oor:name="OfficeMenuBarMerging">
+        <node oor:name="tud.mci.tangram.svgexportfilteraddon" oor:op="replace">
+            <node oor:name="S1" oor:op="replace">
+                <prop oor:name="MergePoint"><value>.uno:PickList\.uno:ExportToPDF</value></prop>
+                <prop oor:name="MergeCommand"><value>AddAfter</value></prop>
+                <prop oor:name="MergeFallback"><value>AddPath</value></prop>
+                <prop oor:name="MergeContext"><value>com.sun.star.drawing.DrawingDocument</value></prop>
+                <node oor:name="MenuItems">
+                    <node oor:name="m1" oor:op="replace">
+                        <prop oor:name="URL">
+                            <value>tud.mci.tangram.svgexportfilteraddon:exportSvgCommand</value>
+                        </prop>
+                        <prop oor:name="Title" oor:type="xs:string">
+                            <value xml:lang="en">Export as SVG File</value>
+                            <value xml:lang="de">Export als SVG Datei</value>
+                        </prop>
+                    </node>
+                </node>
+            </node>
+        </node>
+    </node>
+    <node oor:name="OfficeToolbarMerging">
+      <node oor:name="tud.mci.tangram.svgexportfilteraddon" oor:op="replace">
+            <node oor:name="m1" oor:op="replace">
+                <prop oor:name="MergeToolBar"><value>standardbar</value></prop>
+                <prop oor:name="MergePoint"><value>.uno:ExportDirectToPDF</value></prop>
+                <prop oor:name="MergeCommand"><value>AddAfter</value></prop>
+                <prop oor:name="MergeFallback"><value>AddLast</value></prop>
+                <prop oor:name="MergeContext"><value>com.sun.star.drawing.DrawingDocument</value></prop>
+                <node oor:name="ToolBarItems">
+                    <node oor:name="b1" oor:op="replace">
+                        <prop oor:name="URL" oor:type="xs:string">
+                          <value>tud.mci.tangram.svgexportfilteraddon:exportSvgCommand</value>
+                        </prop>
+                        <prop oor:name="Title" oor:type="xs:string">
+                          <value/>
+                          <value xml:lang="en">Export as SVG File</value>
+                          <value xml:lang="de">Export als SVG Datei</value>
+                        </prop>
+                    </node>
+                </node>
+            </node>
+      </node>
+    </node>
+    <node oor:name="Images">
+      <node oor:name="tud.mci.tangram.svgexportfilteraddon.exportsvgcommand.images" oor:op="replace">
+        <prop oor:name="URL" oor:type="xs:string">
+          <value>tud.mci.tangram.svgexportfilteraddon:exportSvgCommand</value>
+        </prop>
+        <node oor:name="UserDefinedImages">
+          <prop oor:name="ImageSmallURL">
+            <value>%origin%/../../images/SvgIcon16LoContrast.png</value>
+          </prop>
+          <prop oor:name="ImageBigURL">
+            <value>%origin%/../../images/SvgIcon26LoContrast.png</value>
+          </prop>
+          <prop oor:name="ImageSmallHCURL">
+            <value>%origin%/../../images/SvgIcon16HiContrast.png</value>
+          </prop>
+          <prop oor:name="ImageBigHCURL">
+            <value>%origin%/../../images/SvgIcon26HiContrast.png</value>
+          </prop>
+        </node>
+      </node>
+      </node>
+  </node>
+</oor:component-data>
