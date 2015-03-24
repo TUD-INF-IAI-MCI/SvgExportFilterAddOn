@@ -10,10 +10,10 @@
         <!-- In case of XML based filters the service name always must be com.sun.star.comp.Writer.XMLFilterAdaptor -->
         <prop oor:name="FilterService"><value>com.sun.star.comp.Writer.XmlFilterAdaptor</value></prop>
         <prop oor:name="UIComponent"/>
-        <prop oor:name="UserData"><value oor:separator=",">tud.mci.tangram.SvgExportFilterAddOn, , ,com.sun.star.comp.Draw.XMLExporter</value></prop>
+        <prop oor:name="UserData"><value oor:separator=",">tud.mci.tangram.SvgExportFilter, , ,com.sun.star.comp.Draw.XMLExporter</value></prop>
         <!-- 
          | UserData for filter that implements the com.sun.star.comp.Writer.XmlFilterAdaptor service:
-         |    1.    service name of the XML based filter service it must instantiate: tud.mci.tangram.SvgExportFilterAddOn
+         |    1.    service name of the XML based filter service it must instantiate: tud.mci.tangram.SvgExportFilter
          |    2.    unused (classes/pocketword.jar)
          |    3.    unused (import DocumentHandlers service:  
                         com.sun.star.comp.Writer.XMLImporter or 
@@ -27,6 +27,18 @@
                         com.sun.star.xml.sax.Writer -> Write Error. The file could not be written.
 
         -->
+        <prop oor:name="TemplateName"/>
+        <prop oor:name="Flags"><value>EXPORT ALIEN 3RDPARTYFILTER SUPPORTSSELECTION</value></prop>
+    </node>
+    <node oor:name="tud_mci_tangram_XmlExportFilter" oor:op="replace">
+        <prop oor:name="UIName"><value>XML</value></prop>
+        <prop oor:name="Type"><value>tud_mci_tangram_XmlExportFilter</value></prop>
+        <prop oor:name="FileFormatVersion"><value>0</value></prop>
+        <prop oor:name="DocumentService"><value>com.sun.star.drawing.DrawingDocument</value></prop>
+        <!-- In case of XML based filters the service name always must be com.sun.star.comp.Writer.XMLFilterAdaptor -->
+        <prop oor:name="FilterService"><value>com.sun.star.comp.Writer.XmlFilterAdaptor</value></prop>
+        <prop oor:name="UIComponent"/>
+        <prop oor:name="UserData"><value oor:separator=",">tud.mci.tangram.XmlExportFilter, , ,com.sun.star.comp.Draw.XMLExporter</value></prop>
         <prop oor:name="TemplateName"/>
         <prop oor:name="Flags"><value>EXPORT ALIEN 3RDPARTYFILTER SUPPORTSSELECTION</value></prop>
     </node>

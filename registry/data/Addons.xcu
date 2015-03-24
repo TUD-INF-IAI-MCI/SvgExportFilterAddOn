@@ -20,6 +20,17 @@
                         </prop>
                     </node>
                 </node>
+                <node oor:name="MenuItems">
+                    <node oor:name="m2" oor:op="replace">
+                        <prop oor:name="URL">
+                            <value>tud.mci.tangram.svgexportfilteraddon:exportXmlCommand</value>
+                        </prop>
+                        <prop oor:name="Title" oor:type="xs:string">
+                            <value xml:lang="en">Export as XML File</value>
+                            <value xml:lang="de">Export als XML Datei</value>
+                        </prop>
+                    </node>
+                </node>
             </node>
         </node>
     </node>
@@ -40,6 +51,16 @@
                           <value/>
                           <value xml:lang="en">Export as SVG File</value>
                           <value xml:lang="de">Export als SVG Datei</value>
+                        </prop>
+                    </node>
+                    <node oor:name="b2" oor:op="replace">
+                        <prop oor:name="URL" oor:type="xs:string">
+                          <value>tud.mci.tangram.svgexportfilteraddon:exportXmlCommand</value>
+                        </prop>
+                        <prop oor:name="Title" oor:type="xs:string">
+                          <value/>
+                          <value xml:lang="en">Export as XML File</value>
+                          <value xml:lang="de">Export als XML Datei</value>
                         </prop>
                     </node>
                 </node>
@@ -66,6 +87,19 @@
           </prop-->
         </node>
       </node>
+      <node oor:name="tud.mci.tangram.svgexportfilteraddon.exportxmlcommand.images" oor:op="replace">
+        <prop oor:name="URL" oor:type="xs:string">
+          <value>tud.mci.tangram.svgexportfilteraddon:exportXmlCommand</value>
+        </prop>
+        <node oor:name="UserDefinedImages">
+          <prop oor:name="ImageSmallURL">
+            <value>%origin%/../../images/XmlIcon16.png</value>
+          </prop>
+          <prop oor:name="ImageBigURL">
+            <value>%origin%/../../images/XmlIcon26.png</value>
+          </prop>
+        </node>
       </node>
+    </node>
   </node>
 </oor:component-data>
