@@ -28,7 +28,7 @@
 
         -->
         <prop oor:name="TemplateName"/>
-        <prop oor:name="Flags"><value>EXPORT ALIEN 3RDPARTYFILTER SUPPORTSSELECTION</value></prop>
+        <prop oor:name="Flags"><value>EXPORT ALIEN 3RDPARTYFILTER</value></prop><!-- SUPPORTSSELECTION -->
     </node>
     <node oor:name="tud_mci_tangram_XmlExportFilter" oor:op="replace">
         <prop oor:name="UIName"><value>XML</value></prop>
@@ -40,7 +40,7 @@
         <prop oor:name="UIComponent"/>
         <prop oor:name="UserData"><value oor:separator=",">tud.mci.tangram.XmlExportFilter, , ,com.sun.star.comp.Draw.XMLExporter</value></prop>
         <prop oor:name="TemplateName"/>
-        <prop oor:name="Flags"><value>EXPORT ALIEN 3RDPARTYFILTER SUPPORTSSELECTION</value></prop>
+        <prop oor:name="Flags"><value>EXPORT ALIEN 3RDPARTYFILTER</value></prop><!-- SUPPORTSSELECTION -->
     </node>
  </node>
 </oor:component-data>

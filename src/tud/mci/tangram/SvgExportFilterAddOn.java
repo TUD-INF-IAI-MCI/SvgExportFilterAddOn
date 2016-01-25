@@ -1,6 +1,9 @@
 package tud.mci.tangram;
 
 import com.sun.star.beans.PropertyValue;
+import com.sun.star.beans.XPropertySet;
+import com.sun.star.drawing.XDrawPagesSupplier;
+import com.sun.star.drawing.XDrawView;
 import com.sun.star.frame.DispatchDescriptor;
 import com.sun.star.frame.XDispatch;
 import com.sun.star.frame.XDispatchHelper;
@@ -21,6 +24,7 @@ import com.sun.star.ui.dialogs.XExecutableDialog;
 import com.sun.star.ui.dialogs.XFilePicker;
 import com.sun.star.ui.dialogs.XFilePickerControlAccess;
 import com.sun.star.ui.dialogs.XFilterManager;
+import com.sun.star.uno.AnyConverter;
 import com.sun.star.uno.Exception;
 import com.sun.star.uno.Type;
 import com.sun.star.uno.UnoRuntime;
@@ -55,6 +59,7 @@ public final class SvgExportFilterAddOn extends WeakBase
     private static final String m_implementationName = SvgExportFilterAddOn.class.getName();
     private static final String[] m_serviceNames = {
         "com.sun.star.frame.ProtocolHandler"};
+    private String m_lastStorePath = "";
 
 // =============================================================================
 // constructor
@@ -266,7 +271,11 @@ public final class SvgExportFilterAddOn extends WeakBase
             String fileUrl = m_xFrame.getController().getModel().getURL();
             XTitle xTitle = UnoRuntime.queryInterface(XTitle.class, m_xFrame.getController());
             String fileName = xTitle.getTitle();
-            if (!fileUrl.isEmpty())
+            if (!m_lastStorePath.isEmpty())
+            {
+                xFilePicker.setDisplayDirectory(m_lastStorePath.substring(0, m_lastStorePath.lastIndexOf("/")));
+            }
+            else if (!fileUrl.isEmpty())
             {
                 fileName = fileUrl.substring(fileUrl.lastIndexOf("/")+1);
                 // set same path as original document
@@ -276,7 +285,14 @@ public final class SvgExportFilterAddOn extends WeakBase
             {
                 fileName = fileName.substring(0, fileName.length()-4);
             }
-
+            // get page number and count
+            XDrawView drawView = (XDrawView) UnoRuntime.queryInterface(XDrawView.class, m_xFrame.getController());
+            XPropertySet pageProperties = (XPropertySet) UnoRuntime.queryInterface(XPropertySet.class, drawView.getCurrentPage());
+            short pageNumber = AnyConverter.toShort(pageProperties.getPropertyValue("Number")); // starting with 1
+            XDrawPagesSupplier drawPageSupplier = (XDrawPagesSupplier) UnoRuntime.queryInterface (XDrawPagesSupplier.class, m_xFrame.getController().getModel());
+            long numPages = drawPageSupplier.getDrawPages().getCount();
+            if (numPages>1) fileName+="_p"+pageNumber;
+            
             // the defaultname is the initially proposed filename..
             xFilePicker.setDefaultName(fileName + fileTypeEnding);
 
@@ -287,7 +303,7 @@ public final class SvgExportFilterAddOn extends WeakBase
 
             // choose the template that defines the capabilities of the filepicker dialog
             XInitialization xInitialize = (XInitialization) UnoRuntime.queryInterface(XInitialization.class, xFilePicker);
-            Short[] listAny = new Short[] { com.sun.star.ui.dialogs.TemplateDescription.FILESAVE_AUTOEXTENSION_SELECTION};
+            Short[] listAny = new Short[] { com.sun.star.ui.dialogs.TemplateDescription.FILESAVE_AUTOEXTENSION};// FILESAVE_AUTOEXTENSION_SELECTION
             xInitialize.initialize(listAny);
 
             // add a control to the dialog to add the extension automatically to the filename...
@@ -345,6 +361,7 @@ public final class SvgExportFilterAddOn extends WeakBase
             
             if (sStorePath.isEmpty()) return;
             try {
+                m_lastStorePath = sStorePath;
                 PropertyValue[] args1 = new PropertyValue[4];
                 if (fileSuffix.equals(".svg"))
                 {

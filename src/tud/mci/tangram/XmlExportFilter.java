@@ -214,7 +214,6 @@ public final class XmlExportFilter extends com.sun.star.lib.uno.helper.WeakBase
     {
         System.err.println("startDocument");
         
-        // TODO: Insert your implementation for "startDocument" here.
         m_lastSaxNotificationType = SaxNotificationType.StartDocument;
         m_xHandler.startDocument();
     }
@@ -224,7 +223,6 @@ public final class XmlExportFilter extends com.sun.star.lib.uno.helper.WeakBase
     {
         System.err.println("endDocument");
         
-        // TODO: Insert your implementation for "endDocument" here.
         m_lastSaxNotificationType = SaxNotificationType.EndDocument;
         m_xHandler.endDocument();
     }
@@ -282,7 +280,6 @@ public final class XmlExportFilter extends com.sun.star.lib.uno.helper.WeakBase
     {
         if (m_bPrettyPrint) System.err.print(aWhitespaces);
         
-        // TODO: Insert your implementation for "ignorableWhitespace" here.
         m_lastSaxNotificationType = SaxNotificationType.IgnorableWhitespace;
         if (m_bPrettyPrint) m_xHandler.ignorableWhitespace(aWhitespaces);
     }
@@ -292,7 +289,6 @@ public final class XmlExportFilter extends com.sun.star.lib.uno.helper.WeakBase
     {
         System.err.println("processingInstruction: " + aTarget+ " " + aData);
         
-        // TODO: Insert your implementation for "processingInstruction" here.
         m_lastSaxNotificationType = SaxNotificationType.ProcessingInstruction;
         m_xHandler.processingInstruction(aTarget, aData);
     }
@@ -302,7 +298,6 @@ public final class XmlExportFilter extends com.sun.star.lib.uno.helper.WeakBase
     {
         System.err.println("setDocumentLocator: " + xLocator.toString());
         
-        // TODO: Insert your implementation for "processingInstruction" here.
         m_lastSaxNotificationType = SaxNotificationType.SetDocumentLocator;
         m_xHandler.setDocumentLocator(xLocator);
     }

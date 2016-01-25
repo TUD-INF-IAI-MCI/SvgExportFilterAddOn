@@ -4,10 +4,14 @@ import com.sun.star.lib.uno.helper.WeakBase;
 import com.sun.star.xml.sax.XAttributeList;
 import java.util.ArrayList;
 
-
+/**
+ * A Java Implemention of XAttributeList
+ * @author Martin.Spindler@tu-dresden.de
+ */
 public final class XmlAttributeListImpl extends WeakBase
    implements XAttributeList
 {
+
     private class Attribute
     {
         public String name; public String value; public String type;
@@ -24,6 +28,21 @@ public final class XmlAttributeListImpl extends WeakBase
         m_attributes = new ArrayList<Attribute>();
     };
     
+    public XmlAttributeListImpl(XAttributeList xAttribs) {
+        m_attributes = new ArrayList<Attribute>();
+        SetAttrbiuteList(xAttribs);
+    }
+    
+    /**
+     * Constructor for easy createing with already one contained attribute (value is CDATA)
+     * @param name
+     * @param value
+     */
+    public XmlAttributeListImpl(String name, String value) {
+        m_attributes = new ArrayList<Attribute>();
+        m_attributes.add(new Attribute(name, "CDATA", value));
+    }
+    
     public void AddAttribute(String name, String type, String value)
     {
         m_attributes.add(new Attribute(name, type, value));
@@ -32,6 +51,20 @@ public final class XmlAttributeListImpl extends WeakBase
     public void AddAttribute(String name, String value)
     {
         m_attributes.add(new Attribute(name, "CDATA", value));
+    }
+    
+    public void SetAttribute(String name, String value)
+    {
+        for (Attribute attribute : m_attributes)
+        {
+            if (attribute.name.equals(name))
+            {
+                attribute.value=value;
+                return;
+            }
+        }
+        // if not yet set
+        AddAttribute(name, value);
     }
     
     public void Clear()
